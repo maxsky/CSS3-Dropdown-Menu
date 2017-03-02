@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: auto;
+  padding: 0;
+}
+
+.float-right {
+  float: right
+}
+
+#closed,#opened {
+  display: inline-block;
+  margin: 20px 50px
+}
+
+#closed label,#closed ul li,#opened label,#opened ul li {
+  display: block;
+  padding: 15px 20px;
+  width: 200px;
+  background: #ecf0f1
+}
+
+#closed label:hover,#closed ul li:hover,#opened label:hover,#opened ul li:hover {
+  background: #1abc9c;
+  color: #fff;
+  cursor: pointer
+}
+
+#closed label,#opened label {
+  position: relative;
+  z-index: 2;
+  border-left: 4px solid #1abc9c;
+  border-radius: 0 5px 0 0;
+  color: #1abc9c
+}
+
+#closed input,#opened input {
+  display: none
+}
+
+#closed input~ul,#opened input~ul {
+  position: relative;
+  top: -20px;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0
+}
+
+#closed input:checked+label,#opened input:checked+label {
+  background: #1abc9c;
+  color: #fff
+}
+
+#closed input:checked~ul,#opened input:checked~ul {
+  top: 0;
+  visibility: visible;
+  opacity: 1
+}
+
+.animate {
+  /* 动画时间 */
+  transition: all .3s;
+  backface-visibility: hidden;
+  /* Firefox */
+  -moz-backface-visibility: hidden;
+  /* Internet Explorer */
+  -ms-backface-visibility: hidden;
+}
